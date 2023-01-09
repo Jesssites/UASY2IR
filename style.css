@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    background-color: aquamarine;
+}
+
+body{
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.judul{
+    font-size: 2rem;
+    font-weight: 850;
+    color: aliceblue;
+    margin-bottom: 20px;
+    
+}
+
+.btn{
+    display: block;
+    width: 100%;
+    height: 15px 20px;
+    text-align: center;
+    border: none;
+    background-color: rgb(219, 107, 107);
+    outline: none;
+    border-radius: 25px;
+    font-size: 1.5rem;
+    color: aliceblue;
+    cursor: pointer;
+}
+.login-reg-text{
+    color: aliceblue;
+}
+
+.kontainer{
+    width: 450px;
+    min-height: 450px;
+    background: url(Y2IRlogo.png);
+    background-size: 50%;
+    background-color: #1A2238;
+    border-radius: 20px;
+    box-shadow: 1px,1px,5px black;
+    padding: 40px 30px;
+}
+
+
+.register{
+    color: #111;
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;text-transform: capitalize;
+}
+
+.input-grup{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 25px;
+}
+
+.input-grup input{
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgb(219, 107, 107);
+    border-radius: 20px;
+    background: #1A2238;
+    padding: 15px 20px;
+    font-size: 1rem;
+    outline: none;
+    transition: .3s;
+}

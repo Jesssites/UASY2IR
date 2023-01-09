@@ -1,0 +1,55 @@
+$cek_user = mysqli_query($koneksi,"SELECT * FROM user WHERE username='$username'");
+    $cek_login = mysqli_num_rows($cek_user);
+
+    if ($cek_login > 0) {
+        echo "<script>
+        alert('Username Telah Terdaftar');
+        window.location = 'register.php';
+        </script>";
+    }else {
+        if ($password != $password){
+        echo "<script>
+        alert('Password tidak cocok');
+        window.location = 'register.php';
+        </script>";
+        }else{
+            mysqli_query($koneksi,"INSERT INTO user VALUES('$name','$username','$email','$password')");
+            echo "<script>
+            alert('Telah Terdaftar');
+            window.location = 'login.php';
+            </script>";
+        }
+    }
+
+
+
+
+    $ambil = mysqli_connect($koneksi, "SELECT * FROM user WHERE username ='$username'");
+
+    if (mysqli_num_rows($ambil) === 1) {
+        $data = mysqli_fetch_assoc($ambil);
+
+        if (password_verify($password, $data['password'])){
+            header("location:index.php");
+            exit();
+        }else{
+            echo "<script>alert('U&P salah');
+            window.location = 'login.php';
+            </script>";
+        }
+        
+    }else{
+        echo "<script>alert('Password salah Maaf');
+        window.location = 'login.php';
+        </script>";
+    }
+
+
+    $error[] = 'user already exist!';
+    }else{
+        if($password != $password){
+            $error [] = 'password not matched!';
+        }else{
+            $insert = "INSERT INTO user(user, pass) VALUES('$username','$password')";
+            mysqli_query($conn, $insert);
+            header('location:login.php');
